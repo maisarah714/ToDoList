@@ -26,3 +26,5 @@ More things to learn:
 2. Learn how to use UI Toolkit
 3. Learn how to use class instead of function
 4. Learn how to use this.state and setState instead of useState
+
+This apps is done with the guidance of The Net Ninja on youtube: https://youtu.be/LH_SoXiu_Hk
