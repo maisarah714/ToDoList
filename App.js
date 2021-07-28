@@ -67,14 +67,17 @@ export default function App(){
       <TouchableWithoutFeedback onPress={() => {
         Keyboard.dismiss();
       }} >
-        <View>
+        <View style={style.container}>
           <Header />
-          <AddItem addItem={addItem} />
+          <View style={style.content}>
+            <AddItem addItem={addItem} />
 
-          <View>
-            <FlatList style={style.flatlist} data={data} renderItem={ ({item}) => (
-              <ListItem item={item} checkItem={checkItem}/>
-            ) }/>
+            <View style={style.flatlist}>
+              <FlatList data={data} renderItem={ ({item}) => (
+                <ListItem item={item} checkItem={checkItem}/>
+              ) }/>
+            </View>
+            
           </View>
         </View>
       </TouchableWithoutFeedback>
@@ -83,8 +86,18 @@ export default function App(){
 }
 
 const style = StyleSheet.create({
+  container:{
+    flex: 1,
+  },
+  content:{ 
+    flex: 1,
+    padding:10,
+    // backgroundColor:"red",
+  },
 	flatlist: {
-	  marginBottom: 350,
+    flex: 1,
+    paddingBottom: 20,
+    // backgroundColor: "yellow",
 	},
   
   });

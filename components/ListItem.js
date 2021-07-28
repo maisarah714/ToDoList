@@ -1,17 +1,24 @@
+import { row } from 'mathjs';
 import React from 'react';
 import {
 	StyleSheet,
 	Text,
 	TouchableOpacity,
+	View,
+	YellowBox,
   } from 'react-native';
+
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export default function ListItem({item, checkItem}) {
 	return (
 		<TouchableOpacity onPress={() => checkItem(item.id)}>
-              <Text style={style.itemListBox} >{item.item} 
+			<View style={style.itemListBox}>
+              <Icon name='trash'size={18} color='white'/>
+              <Text style={style.text} >{item.item} 
 			  {/* {item.id} */}
-              {/* <Icon type="font-awesome" name="close" /> */}
-              </Text>
+			  </Text>
+			</View>
               
 		</TouchableOpacity>
 	)
@@ -20,16 +27,17 @@ export default function ListItem({item, checkItem}) {
 const style = StyleSheet.create({
 	itemListBox: {
 		backgroundColor: "orange",
-		height: 75,
-		alignItems: "center",
-		paddingTop: 25,
-		marginTop: 15,
-		marginRight: 25,
-		marginLeft: 25,
-		fontFamily: "Roboto",
+		flexDirection: "row",
+		alignItems: "flex-start",
+		padding:15,
+		margin: 15,
+		marginBottom: 5,
+	},
+	text:{
 		color: "white",
-		fontSize: 20, 
-		paddingLeft: 15,
+		fontFamily: "Roboto",
+		fontSize: 16, 
+		marginLeft: 15,
 	  },
   
   });
