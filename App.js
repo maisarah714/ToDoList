@@ -5,6 +5,8 @@ import {
   View,
   FlatList,
   Alert,
+  TouchableWithoutFeedback,
+  Keyboard,
 } from 'react-native';
 
 import { randomInt } from 'mathjs';
@@ -62,16 +64,20 @@ export default function App(){
 
   
     return(
-      <View>
-        <Header />
-        <AddItem addItem={addItem} />
-
+      <TouchableWithoutFeedback onPress={() => {
+        Keyboard.dismiss();
+      }} >
         <View>
-          <FlatList style={style.flatlist} data={data} renderItem={ ({item}) => (
-            <ListItem item={item} checkItem={checkItem}/>
-          ) }/>
+          <Header />
+          <AddItem addItem={addItem} />
+
+          <View>
+            <FlatList style={style.flatlist} data={data} renderItem={ ({item}) => (
+              <ListItem item={item} checkItem={checkItem}/>
+            ) }/>
+          </View>
         </View>
-      </View>
+      </TouchableWithoutFeedback>
 
     );
 }

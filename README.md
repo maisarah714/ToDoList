@@ -17,7 +17,7 @@ Learning Outcome:
 Future work:
 1. Learn how to make modal
 2. How to ensure that the inputText is not empty before add item (idea: use if inputtext is null)
-3. use Alert
+3. use Alert /
 4. line through item instead of delete the item when the task is done
 5. swipe the box to left to reveal trash bin icon in red, click on the icon to delete the item
 
