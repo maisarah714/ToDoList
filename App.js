@@ -4,6 +4,7 @@ import {
   StyleSheet,
   View,
   FlatList,
+  Alert,
 } from 'react-native';
 
 import { randomInt } from 'mathjs';
@@ -42,11 +43,21 @@ export default function App(){
   };
 
   const addItem = itemName => {
-    setDataList(prevItems => {
-      return [...prevItems, {id: randomInt(0,1000), item: itemName} ]
-    });
-    // setText("");
-    // setCountID(++count);
+
+    if(itemName == null){
+      Alert.alert("Error", "Item name cannot be empty!", [{
+        text: "OK!",
+      }]);
+    }
+    else{
+      setDataList(prevItems => {
+        return [...prevItems, {id: randomInt(0,1000), item: itemName} ]
+      });
+      // setText("");
+      // setCountID(++count);
+
+    }
+
   };
 
   
